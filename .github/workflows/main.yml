@@ -1,13 +1,15 @@
-name: A workflow for my Hello World file
+name: Greeting from Mona
 on: push
 jobs:
-  build:
-    name: Hello world action
+  my-job:
+    name: My Job
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: ./action-a
-      - name: opsless/ms-teams-github-action  
-      - uses: opsless/ms-teams-github-actions@main
-        with:
-          MY_NAME: "I say hey, Mona"
+    - name: Print a greeting
+      env:
+        MY_VAR: Hi there! My name is
+        FIRST_NAME: Mona
+        MIDDLE_NAME: The
+        LAST_NAME: Octocat
+      run: |
+        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
