@@ -5,7 +5,7 @@ jobs:
     name: Hello world action
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: ./action-a
+      - name: opsless/ms-teams-github-action  
+      - uses: opsless/ms-teams-github-actions@main
         with:
           MY_NAME: "I say hey, Mona"
